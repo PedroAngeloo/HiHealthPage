@@ -17,7 +17,6 @@ import { FaBriefcase, FaCalendar, FaCheck, FaClock, FaEnvelope, FaHeart, FaLeaf,
 export default function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showSolutions, setShowSolutions] = useState(false);
-  const [selectedSolution, setSelectedSolution] = useState<string | null>(null);
 
   useEffect(() => {
     const solutionBoxes = document.querySelectorAll('.solution-box');
@@ -51,7 +50,6 @@ export default function Home() {
         behavior: 'smooth'
       });
     }
-    setSelectedSolution(id);
     setShowMobileMenu(false);
   };
 
