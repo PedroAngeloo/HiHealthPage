@@ -21,13 +21,13 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
- /* .testimonial-carousel {
+  .testimonial-carousel {
     position: relative;
-    height: 200px; 
+    height: 200px; /* Adjust as needed */
     overflow: hidden;
-  }*/
+  }
 
- /*.testimonial-card {
+  .testimonial-card {
     position: absolute;
     top: 0;
     left: 0;
@@ -38,14 +38,6 @@
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }*/
-
-  .testimonial-card {
-    background-color: #f9f9f9; /* Cor de fundo do cartão */
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    text-align: center; /* Centraliza o texto */
   }
 
   .testimonial-card.active {

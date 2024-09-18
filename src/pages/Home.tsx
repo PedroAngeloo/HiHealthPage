@@ -19,10 +19,30 @@ export default function Home() {
   const [showSolutions, setShowSolutions] = useState(false);
   const [selectedSolution, setSelectedSolution] = useState<string | null>(null);
 
+  useEffect(() => {
+    const solutionBoxes = document.querySelectorAll('.solution-box');
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight * 0.8;
+
+      solutionBoxes.forEach((box: any) => {
+        if (box.offsetTop < scrollPosition && box.offsetTop + box.clientHeight > window.scrollY) {
+          box.classList.add('visible');
+        } else {
+          box.classList.remove('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToDescription = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const headerOffset = 60; // Adjust this value based on your header height
+      const headerOffset = 60;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -148,7 +168,7 @@ export default function Home() {
         <div className="container">
           <h2 className="solutions-title">Soluções Inovadoras</h2>
           <p className="solutions-subtitle">Descubra como o Hi Health revoluciona o gerenciamento das suas consultas</p>
-          <div className="solutions-content">
+          <div className="solutions-grid">
             {[
               { icon: FaClock, title: "Agendamento Rápido", shortDesc: "Marque consultas em segundos", longDesc: "Nossa plataforma permite que você agende consultas em poucos cliques, economizando seu tempo e garantindo que você receba o atendimento que precisa quando precisa.", id: "agendamento" },
               { icon: FaCalendar, title: "Flexibilidade Total", shortDesc: "Cancele ou reagende sem complicações", longDesc: "Entendemos que imprevistos acontecem. Por isso, oferecemos a opção de cancelar ou reagendar suas consultas de forma fácil e rápida, sem burocracia.", id: "flexibilidade" },
@@ -157,43 +177,16 @@ export default function Home() {
               { icon: FaUsers, title: "Suporte Dedicado", shortDesc: "Assistência sempre que precisar", longDesc: "Nossa equipe de suporte está sempre pronta para ajudar. Seja por chat, e-mail ou telefone, estamos aqui para garantir que sua experiência seja a melhor possível.", id: "suporte" },
               { icon: FaLeaf, title: "Histórico Completo", shortDesc: "Acompanhamento eficiente da sua saúde", longDesc: "Mantenha todos os seus registros médicos em um só lugar. Acompanhe sua evolução, visualize resultados de exames e tenha um panorama completo da sua saúde.", id: "historico" },
             ].map((item, index) => (
-              <div key={index} className="solution-pair">
-                <div className="solution-card" onClick={() => scrollToDescription(item.id)}>
-                  <item.icon className="solution-icon" />
-                  <h3 className="solution-card-title">{item.title}</h3>
-                  <p className="solution-card-description">{item.shortDesc}</p>
-                </div>
-                <div id={item.id} className={`solution-description ${selectedSolution === item.id ? 'highlighted' : ''}`}>
-                  <h3>{item.title}</h3>
-                  <p>{item.longDesc}</p>
-                </div>
+              <div key={index} className="solution-box">
+                <item.icon className="solution-icon" />
+                <h3 className="solution-card-title">{item.title}</h3>
+                <p className="solution-card-description">{item.shortDesc}</p>
+                <p className="solution-card-longdesc">{item.longDesc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      <section id="testimonials" className="testimonials">
-  <div className="container">
-    <h2 className="testimonials-title">O que dizem sobre nós</h2>
-    <p className="testimonials-subtitle">Experiências reais de usuários do Hi Health</p>
-    <div className="testimonials-grid">
-      {[
-        { name: "Mariana Costa", role: "Paciente", text: "O Hi Health simplificou minha vida! Agendar consultas nunca foi tão fácil e rápido. Recomendo a todos!" },
-        { name: "Dr. Ricardo Almeida", role: "Clínico Geral", text: "Como médico, vejo o Hi Health como uma ferramenta essencial. Melhorou significativamente a comunicação com meus pacientes." },
-        { name: "Fernanda Santos", role: "Mãe de 3", text: "Gerenciar a saúde da minha família ficou muito mais simples com o Hi Health. É prático, intuitivo e confiável." },
-        { name: "Carlos Mendes", role: "Executivo", text: "Minha agenda é sempre cheia, mas o Hi Health me ajuda a priorizar minha saúde sem complicações. Excelente aplicativo!" }
-      ].map((testimonial, index) => (
-        <div key={index} className="testimonial-card">
-          <p className="testimonial-text">"{testimonial.text}"</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-
-
 
       <section id="pricing" className="pricing">
         <div className="container">
@@ -230,21 +223,21 @@ export default function Home() {
                 <FaEnvelope className="info-icon" />
                 <div>
                   <strong>E-mail:</strong>
-                  <p>suporte@hihealth.com</p>
+                  <p>contato@hihealth.com</p>
                 </div>
               </div>
               <div className="info-item">
                 <FaPhone className="info-icon" />
                 <div>
                   <strong>Telefone:</strong>
-                  <p>(45) 4321-9876</p>
+                  <p>(11) 99999-9999</p>
                 </div>
               </div>
               <div className="info-item">
                 <FaMapMarkerAlt className="info-icon" />
                 <div>
                   <strong>Cidade:</strong>
-                  <p>Cascacity, PR</p>
+                  <p>São Paulo, SP</p>
                 </div>
               </div>
               <div className="info-item">
@@ -253,17 +246,6 @@ export default function Home() {
                   <strong>Trabalhe Conosco:</strong>
                   <p><a href="#">Veja nossas vagas</a></p>
                 </div>
-              </div>
-
-              {/* Mapa incorporado abaixo de "Veja nossas vagas" */}
-              <div className="map-container">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1202.1570247335935!2d-53.5069018381891!3d-24.945500985833068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sbr!4v1726661428059!5m2!1sen!2sbrhttps://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4043.525603902087!2d-53.50731437748563!3d-24.946491814976586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d13b2c555555%3A0x970208da36e7b68f!2sCENTRO%20UNIVERSIT%C3%81RIO%20DA%20FUNDA%C3%87%C3%83O%20ASSIS%20GURGACZ!5e1!3m2!1sen!2sbr!4v1726661493647!5m2!1sen!2sbr"
-                  width="450"
-                  height="350"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                ></iframe>
               </div>
             </div>
 
@@ -288,8 +270,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
     </>
   );
 }
