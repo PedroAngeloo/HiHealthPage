@@ -16,7 +16,6 @@ import { FaBriefcase, FaCalendar, FaCheck, FaClock, FaEnvelope, FaHeart, FaLeaf,
 
 export default function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [showSolutions, setShowSolutions] = useState(false);
 
   useEffect(() => {
     const solutionBoxes = document.querySelectorAll('.solution-box');
@@ -61,19 +60,6 @@ export default function Home() {
       document.body.classList.remove('no-scroll');
     }
   }, [showMobileMenu]);
-
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 300) {
-        setShowSolutions(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -162,29 +148,84 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="solution" className={`solutions ${showSolutions ? 'show' : ''}`}>
+      <section id="solution" className="solutions">
         <div className="container">
           <h2 className="solutions-title">Soluções Inovadoras</h2>
           <p className="solutions-subtitle">Descubra como o Hi Health revoluciona o gerenciamento das suas consultas</p>
           <div className="solutions-grid">
             {[
-              { icon: FaClock, title: "Agendamento Rápido", shortDesc: "Marque consultas em segundos", longDesc: "Nossa plataforma permite que você agende consultas em poucos cliques, economizando seu tempo e garantindo que você receba o atendimento que precisa quando precisa.", id: "agendamento" },
-              { icon: FaCalendar, title: "Flexibilidade Total", shortDesc: "Cancele ou reagende sem complicações", longDesc: "Entendemos que imprevistos acontecem. Por isso, oferecemos a opção de cancelar ou reagendar suas consultas de forma fácil e rápida, sem burocracia.", id: "flexibilidade" },
-              { icon: FaHeart, title: "Atendimento Personalizado", shortDesc: "Consultas adaptadas às suas necessidades", longDesc: "Cada paciente é único. Nossa plataforma permite que os médicos tenham acesso ao seu histórico e preferências, garantindo um atendimento verdadeiramente personalizado.", id: "atendimento" },
-              { icon: FaMobileAlt, title: "App Intuitivo", shortDesc: "Gerencie tudo pelo seu smartphone", longDesc: "Nosso aplicativo móvel foi projetado pensando em você. Interface amigável, fácil de usar e com todas as funcionalidades na palma da sua mão.", id: "app" },
-              { icon: FaUsers, title: "Suporte Dedicado", shortDesc: "Assistência sempre que precisar", longDesc: "Nossa equipe de suporte está sempre pronta para ajudar. Seja por chat, e-mail ou telefone, estamos aqui para garantir que sua experiência seja a melhor possível.", id: "suporte" },
-              { icon: FaLeaf, title: "Histórico Completo", shortDesc: "Acompanhamento eficiente da sua saúde", longDesc: "Mantenha todos os seus registros médicos em um só lugar. Acompanhe sua evolução, visualize resultados de exames e tenha um panorama completo da sua saúde.", id: "historico" },
+              { icon: FaClock, title: "Agendamento Rápido", longDesc: "Nossa plataforma permite que você agende consultas em poucos cliques, economizando seu tempo e garantindo que você receba o atendimento que precisa quando precisa.", id: "agendamento" },
+              { icon: FaCalendar, title: "Flexibilidade Total", longDesc: "Entendemos que imprevistos acontecem. Por isso, oferecemos a opção de cancelar ou reagendar suas consultas de forma fácil e rápida, sem burocracia.", id: "flexibilidade" },
+              { icon: FaHeart, title: "Atendimento Personalizado", longDesc: "Cada paciente é único. Nossa plataforma permite que os médicos tenham acesso ao seu histórico e preferências, garantindo um atendimento verdadeiramente personalizado.", id: "atendimento" },
+              { icon: FaMobileAlt, title: "App Intuitivo", longDesc: "Nosso aplicativo móvel foi projetado pensando em você. Interface amigável, fácil de usar e com todas as funcionalidades na palma da sua mão.", id: "app" },
+              { icon: FaUsers, title: "Suporte Dedicado", longDesc: "Nossa equipe de suporte está sempre pronta para ajudar. Seja por chat, e-mail ou telefone, estamos aqui para garantir que sua experiência seja a melhor possível.", id: "suporte" },
+              { icon: FaLeaf, title: "Histórico Completo", longDesc: "Mantenha todos os seus registros médicos em um só lugar. Acompanhe sua evolução, visualize resultados de exames e tenha um panorama completo da sua saúde.", id: "historico" },
             ].map((item, index) => (
-              <div key={index} className="solution-box">
+              <div key={index} className="solution-box box-with-border">
                 <item.icon className="solution-icon" />
                 <h3 className="solution-card-title">{item.title}</h3>
-                <p className="solution-card-description">{item.shortDesc}</p>
                 <p className="solution-card-longdesc">{item.longDesc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      <section id="testimonials" className="testimonials">
+        <div className="container">
+          {/* Título da Seção */}
+          <h2 className="testimonials-title">O que dizem sobre nós</h2>
+
+          {/* Contêiner de depoimentos */}
+          <div className="testimonial-container">
+            {[
+              {
+                name: "Mariana Costa",
+                role: "Paciente",
+                text: "O Hi Health simplificou minha vida! Agendar consultas nunca foi tão fácil e rápido. Recomendo a todos!",
+              },
+              {
+                name: "Dr. Ricardo Almeida",
+                role: "Clínico Geral",
+                text: "Como médico, vejo o Hi Health como uma ferramenta essencial. Melhorou significativamente a comunicação com meus pacientes.",
+              },
+              {
+                name: "Fernanda Santos",
+                role: "Mãe de 3",
+                text: "Gerenciar a saúde da minha família ficou muito mais simples com o Hi Health. É prático, intuitivo e confiável.",
+              },
+              {
+                name: "Carlos Mendes",
+                role: "Executivo",
+                text: "Minha agenda é sempre cheia, mas o Hi Health me ajuda a priorizar minha saúde sem complicações. Excelente aplicativo!",
+              },
+              {
+                name: "Sofia Lima",
+                role: "Estudante",
+                text: "Entre estudos e estágios, sempre tenho pouco tempo, mas o Hi Health me ajudou a manter minha saúde em dia sem perder tempo!",
+              },
+              {
+                name: "Paulo Souza",
+                role: "Empresário",
+                text: "Eu precisava de um jeito fácil de agendar consultas e o Hi Health entregou isso perfeitamente. Extremamente prático e eficiente!",
+              },
+            ].map((testimonial, index) => (
+              <div key={index} className="testimonial-card">
+                {/* Texto do depoimento */}
+                <p className="testimonial-text">"{testimonial.text}"</p>
+
+                {/* Autor do depoimento */}
+                <div className="testimonial-author">
+                  <strong>{testimonial.name}</strong>
+                  <span>{testimonial.role}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
 
       <section id="pricing" className="pricing">
         <div className="container">
@@ -221,21 +262,21 @@ export default function Home() {
                 <FaEnvelope className="info-icon" />
                 <div>
                   <strong>E-mail:</strong>
-                  <p>contato@hihealth.com</p>
+                  <p>suporte@hihealth.com</p>
                 </div>
               </div>
               <div className="info-item">
                 <FaPhone className="info-icon" />
                 <div>
                   <strong>Telefone:</strong>
-                  <p>(11) 99999-9999</p>
+                  <p>(45) 4321-9876</p>
                 </div>
               </div>
               <div className="info-item">
                 <FaMapMarkerAlt className="info-icon" />
                 <div>
                   <strong>Cidade:</strong>
-                  <p>São Paulo, SP</p>
+                  <p>Cascacity, PR</p>
                 </div>
               </div>
               <div className="info-item">
@@ -244,6 +285,15 @@ export default function Home() {
                   <strong>Trabalhe Conosco:</strong>
                   <p><a href="#">Veja nossas vagas</a></p>
                 </div>
+              </div>
+              <div className="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1202.1570247335935!2d-53.5069018381891!3d-24.945500985833068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sbr!4v1726661428059!5m2!1sen!2sbrhttps://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4043.525603902087!2d-53.50731437748563!3d-24.946491814976586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d13b2c555555%3A0x970208da36e7b68f!2sCENTRO%20UNIVERSIT%C3%81RIO%20DA%20FUNDA%C3%87%C3%83O%20ASSIS%20GURGACZ!5e1!3m2!1sen!2sbr!4v1726661493647!5m2!1sen!2sbr"
+                  width="450"
+                  height="350"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                ></iframe>
               </div>
             </div>
 
