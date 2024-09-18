@@ -291,7 +291,6 @@ export default function Home() {
                   src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1202.1570247335935!2d-53.5069018381891!3d-24.945500985833068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sbr!4v1726661428059!5m2!1sen!2sbrhttps://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4043.525603902087!2d-53.50731437748563!3d-24.946491814976586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d13b2c555555%3A0x970208da36e7b68f!2sCENTRO%20UNIVERSIT%C3%81RIO%20DA%20FUNDA%C3%87%C3%83O%20ASSIS%20GURGACZ!5e1!3m2!1sen!2sbr!4v1726661493647!5m2!1sen!2sbr"
                   width="450"
                   height="350"
-                  style={{ border: 0 }}
                   loading="lazy"
                 ></iframe>
               </div>
@@ -312,9 +311,6 @@ export default function Home() {
               </div>
               <Button text="Enviar Mensagem" />
             </form>
-          </div>
-          <div className="solutions-cta">
-            <Button text="Comece Agora" />
           </div>
         </div>
       </section>

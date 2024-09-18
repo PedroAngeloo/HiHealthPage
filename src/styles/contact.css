@@ -97,5 +97,21 @@
 }
 
 .submit-button:hover {
-  background-color: #0056b3;
+  background-color: #b2e3ff;
+}
+
+.map-container {
+  padding: 10px; /* Espaço entre a borda e o mapa */
+  border: 2px solid #ddd; /* Cor e espessura da borda */
+  border-radius: 10px; /* Cantos arredondados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+  background-color: #fff; /* Fundo branco para contraste */
+  display: flex;
+  justify-content: center; /* Centraliza o mapa horizontalmente */
+  align-items: center; /* Centraliza o mapa verticalmente */
+}
+
+.map-container iframe {
+  border: none; /* Remove a borda padrão do iframe */
+  border-radius: 8px; /* Cantos arredondados para o iframe */
 }
