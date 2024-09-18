@@ -6,31 +6,39 @@
 .pricing-title {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   color: #333;
 }
-  .pricing-grid {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: nowrap;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
 
-  .pricing-card {
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-    border-top: 5px solid;
-    position: relative;
-  }
+.pricing-subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pricing-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  border-top: 5px solid;
+  position: relative;
+}
+
 .pricing-card:hover {
   transform: translateY(-10px);
 }
