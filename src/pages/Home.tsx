@@ -13,6 +13,9 @@ import "../styles/testimonials.css";
 import "../styles/pricing.css";
 import "../styles/contact.css";
 import { FaBriefcase, FaCalendar, FaCheck, FaClock, FaEnvelope, FaHeart, FaLeaf, FaMapMarkerAlt, FaMobileAlt, FaPhone, FaUsers } from "react-icons/fa";
+import ClienteUm from "../assets/images/clienteUm.jpg";
+import ClienteDois from "../assets/images/clienteDois.jpg";
+import ClienteTres from "../assets/images/clienteTres.jpg";
 
 export default function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -171,63 +174,84 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="testimonials" className="testimonials">
-        <div className="container">
-          {/* Título da Seção */}
-          <h2 className="testimonials-title">O que dizem sobre nós</h2>
-
-          {/* Contêiner de depoimentos */}
-          <div className="testimonial-container">
-            {[
-              {
-                name: "Mariana Costa",
-                role: "Paciente",
-                text: "O Hi Health simplificou minha vida! Agendar consultas nunca foi tão fácil e rápido. Recomendo a todos!",
-              },
-              {
-                name: "Dr. Ricardo Almeida",
-                role: "Clínico Geral",
-                text: "Como médico, vejo o Hi Health como uma ferramenta essencial. Melhorou significativamente a comunicação com meus pacientes.",
-              },
-              {
-                name: "Fernanda Santos",
-                role: "Mãe de 3",
-                text: "Gerenciar a saúde da minha família ficou muito mais simples com o Hi Health. É prático, intuitivo e confiável.",
-              },
-              {
-                name: "Carlos Mendes",
-                role: "Executivo",
-                text: "Minha agenda é sempre cheia, mas o Hi Health me ajuda a priorizar minha saúde sem complicações. Excelente aplicativo!",
-              },
-              {
-                name: "Sofia Lima",
-                role: "Estudante",
-                text: "Entre estudos e estágios, sempre tenho pouco tempo, mas o Hi Health me ajudou a manter minha saúde em dia sem perder tempo!",
-              },
-              {
-                name: "Paulo Souza",
-                role: "Empresário",
-                text: "Eu precisava de um jeito fácil de agendar consultas e o Hi Health entregou isso perfeitamente. Extremamente prático e eficiente!",
-              },
-            ].map((testimonial, index) => (
-              <div key={index} className="testimonial-card">
-                {/* Texto do depoimento */}
-                <p className="testimonial-text">"{testimonial.text}"</p>
-
-                {/* Autor do depoimento */}
-                <div className="testimonial-author">
-                  <strong>{testimonial.name}</strong>
-                  <span>{testimonial.role}</span>
+      <section id="testimonials" className="testimonials-section py-xl">
+            <div className="container">
+            <h2 className="testimonials-title">O que dizem sobre nós</h2>
+              
+              <div className="testimonial-carousel">
+                <div className="testimonial-track">
+                  <div className="testimonial-card">
+                    <img
+                      src={ClienteUm}
+                      alt="Valencia"
+                      className="testimonial-image"
+                    />
+                    <p>
+                      "Gerenciar a saúde da minha família ficou muito mais simples com o Hi Health. É prático, intuitivo e confiável."
+                    </p>
+                    <h4>Valencia</h4>
+                  </div>
+                  <div className="testimonial-card">
+                    <img
+                      src={ClienteDois}
+                      alt="Rochet"
+                      className="testimonial-image"
+                    />
+                    <p>
+                      "Como médico, vejo o Hi Health como uma ferramenta essencial. Melhorou significativamente a comunicação com meus pacientes."
+                    </p>
+                    <h4>Rochet</h4>
+                  </div>
+                  <div className="testimonial-card">
+                    <img
+                      src={ClienteTres}
+                      alt="Borre"
+                      className="testimonial-image"
+                    />
+                    <p>
+                      "O Hi Health simplificou minha vida! Agendar consultas nunca foi tão fácil e rápido. Recomendo a todos!"
+                    </p>
+                    <h4>Borre</h4>
+                  </div>
+                  <div className="testimonial-card">
+                    <img
+                      src={ClienteUm}
+                      alt="Valencia"
+                      className="testimonial-image"
+                    />
+                    <p>
+                      "Gerenciar a saúde da minha família ficou muito mais simples com o Hi Health. É prático, intuitivo e confiável."
+                    </p>
+                    <h4>Valencia</h4>
+                  </div>
+                  <div className="testimonial-card">
+                    <img
+                      src={ClienteDois}
+                      alt="Rochet"
+                      className="testimonial-image"
+                    />
+                    <p>
+                      "Como médico, vejo o Hi Health como uma ferramenta essencial. Melhorou significativamente a comunicação com meus pacientes."
+                    </p>
+                    <h4>Rochet</h4>
+                  </div>
+                  <div className="testimonial-card">
+                    <img
+                      src={ClienteTres}
+                      alt="Borre"
+                      className="testimonial-image"
+                    />
+                    <p>
+                      "O Hi Health simplificou minha vida! Agendar consultas nunca foi tão fácil e rápido. Recomendo a todos!"
+                    </p>
+                    <h4>Borre</h4>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
+          </section>      
 
-
-
-      <section id="pricing" className="pricing">
+    <section id="pricing" className="pricing">
         <div className="container">
           <h2 className="pricing-title">Nossos Planos</h2>
           <p className="pricing-subtitle">Escolha o plano ideal para suas necessidades</p>
@@ -252,6 +276,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="contact-section">
+      <h2 className="contact-subtitle">Envie sua dúvida</h2>
+      <h1 className="contact-title">Entre em contato</h1>
+      <p className="contact-description">
+        Entre em contato, estamos dispostos a tirar qualquer dúvida, seja um orçamento, uma dúvida técnica de algum de nossos produtos. Estamos à disposição para responder. 😊
+      </p>
+      <form className="contact-form">
+        <input type="email" placeholder="Seu melhor Email" className="contact-input" required />
+        <input type="text" placeholder="Motivo do contato. Ex: Gostei muito do produto X, poderia me enviar um orçamento?" className="contact-input" required />
+        <button type="submit" className="contact-button">Enviar</button>
+      </form>
+    </section>
+
 
       <section id="contact" className="contact">
         <div className="container">

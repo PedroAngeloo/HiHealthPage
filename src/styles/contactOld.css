@@ -1,0 +1,118 @@
+.contact {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+  }
+  
+  .contact-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+  
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .contact-info {
+    flex: 1;
+    padding: 2rem;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .info-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  
+  .info-item strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+  }
+  
+  .info-item p {
+    margin: 0;
+  }
+  
+  .info-item a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .contact-form {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .form-group textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #b2e3ff;
+  }
+  
+  .map-container {
+    padding: 10px; /* Espaço entre a borda e o mapa */
+    border: 2px solid #ddd; /* Cor e espessura da borda */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    background-color: #fff; /* Fundo branco para contraste */
+    display: flex;
+    justify-content: center; /* Centraliza o mapa horizontalmente */
+    align-items: center; /* Centraliza o mapa verticalmente */
+  }
+  
+  .map-container iframe {
+    border: none; /* Remove a borda padrão do iframe */
+    border-radius: 8px; /* Cantos arredondados para o iframe */
+  }
+  
