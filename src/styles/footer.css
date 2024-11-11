@@ -2,35 +2,33 @@
     background-color: #f8f8f8;
     padding: 20px 0;
     border-top: 2px solid #e0e0e0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    display: grid;
   }
   
-  .footer-container {
-    display: flex;
-    flex-direction: row; /* Garante que os itens fiquem em linha */
-    justify-content: space-between; /* Espaçamento entre as colunas */
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    gap: 20px; /* Espaçamento entre as colunas */
+  .footer-item {
+    padding: 10px;
+    flex: 1;
+    
   }
-  
+
   .footer-logo,
   .footer-section {
     flex: 1; /* Garante que cada coluna ocupe o mesmo espaço */
   }
   
   .footer-logo h3,
-  .footer-section h4 {
+  .footer-item h4 {
     font-size: 1.5em; /* Aumentado o tamanho da fonte para os títulos */
     color: #222;
     margin-bottom: 10px;
-    font-weight: bold; /* Adicionado negrito para os títulos */
+    font-weight: bold; 
   }
   
   .social-icons {
     display: flex;
-    gap: 10px; /* Espaço entre os ícones */
+    gap: 10px; 
   }
   
   .social-icons i {

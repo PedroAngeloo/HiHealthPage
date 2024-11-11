@@ -17,6 +17,7 @@ import ClienteUm from "../assets/images/clienteUm.jpg";
 import ClienteDois from "../assets/images/clienteDois.jpg";
 import ClienteTres from "../assets/images/clienteTres.jpg";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import "../styles/footer.css";
 
 export default function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -353,57 +354,53 @@ export default function Home() {
           </div>
         </div>
       </section>
-        <footer className="footer">
-          <div className="footer-container">
-            {/* Logo e Ícones de Redes Sociais */}
-            <div className="footer-logo">
-              <h3>LogoMarca</h3>
-              <div className="social-icons">
-                <i className="fab fa-instagram"></i>
-                <i className="fab fa-facebook-f"></i>
-                <i className="fab fa-youtube"></i>
-              </div>
-            </div>
-
-            {/* Seção da Empresa */}
-            <div className="footer-section">
-              <h4>Empresa</h4>
-              <ul>
-                <li>Sobre nós</li>
-                <li>Faça parte do time</li>
-                <li>Blog</li>
-              </ul>
-            </div>
-
-            {/* Seção de Funcionalidades */}
-            <div className="footer-section">
-              <h4>Funcionalidades</h4>
-              <ul>
-                <li>Marketing</li>
-                <li>Análise de dados</li>
-                <li>Boot discord</li>
-              </ul>
-            </div>
-
-            <div className="footer-section">
-              <h4>Recursos</h4>
-              <ul>
-                <li>IOS & Android</li>
-                <li>Teste a Demo</li>
-                <li>Clientes</li>
-                <li>API</li>
-              </ul>
-            </div>
-          </div>
-
-
-
-          <div className="footer-bottom">
-            <p>Feito com amor na aula de Programação Web💙 ©2024 AktieTech - Todos os direitos reservados.</p>
-          </div>
-        </footer>
-
         
+      <footer className="footer">
+          
+            
+          <div className="footer-item">
+            <h3>LogoMarca</h3>
+            <div className="social-icons">
+              <i className="fab fa-instagram"></i>
+              <i className="fab fa-facebook-f"></i>
+              <i className="fab fa-youtube"></i>
+            </div>
+
+          </div>
+          <div className="footer-item">
+            <h4>Empresa</h4>
+            <ul>
+              <li>Sobre nós</li>
+              <li>Faça parte do time</li>
+              <li>Blog</li>
+            </ul>
+          </div>
+
+          <div className="footer-item">
+            <h4>Funcionalidades</h4>
+            <ul>
+              <li>Marketing</li>
+              <li>Análise de dados</li>
+              <li>Boot discord</li>
+            </ul>
+          </div>
+
+          <div className="footer-item">
+            <h4>Recursos</h4>
+            <ul>
+              <li>IOS & Android</li>
+              <li>Teste a Demo</li>
+              <li>Clientes</li>
+              <li>API</li>
+            </ul>
+          </div>
+      
+          
+       
+      </footer>    
+        <div className="footer-bottom">
+            <p>Feito com amor na aula de Programação Web💙 ©2024 Pedroca - Libre a todos.</p>
+          </div>  
     </>
   );
 }
