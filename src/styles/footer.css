@@ -1,0 +1,64 @@
+.footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    border-top: 2px solid #e0e0e0;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-direction: row; /* Garante que os itens fiquem em linha */
+    justify-content: space-between; /* Espaçamento entre as colunas */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px; /* Espaçamento entre as colunas */
+  }
+  
+  .footer-logo,
+  .footer-section {
+    flex: 1; /* Garante que cada coluna ocupe o mesmo espaço */
+  }
+  
+  .footer-logo h3,
+  .footer-section h4 {
+    font-size: 1.5em; /* Aumentado o tamanho da fonte para os títulos */
+    color: #222;
+    margin-bottom: 10px;
+    font-weight: bold; /* Adicionado negrito para os títulos */
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px; /* Espaço entre os ícones */
+  }
+  
+  .social-icons i {
+    font-size: 1.2em;
+    color: #1a1a1a;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+  
+  .footer-bottom {
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.85em;
+    color: #555;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  

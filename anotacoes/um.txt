@@ -1,0 +1,40 @@
+<footer class="site_footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <img src="logo">
+                    <ul>
+                   // lista redes sociais
+                        <li><i></i></li>
+                    </ul>
+            </div>
+            <div class="col-3">
+                <h2>Empresa</h2>
+                <ul>
+                    <li>Sobre nós</li>
+                    <li>Faça parte do time</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <h2>Funcionalidades</h2>
+                <ul>
+                    <li>Sobre nós</li>
+                    <li>Faça parte do time</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+            <div class="col-2">
+                <h2>Recursos</h2>
+                <ul>
+                    <li>Sobre nós</li>
+                    <li>Faça parte do time</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div><p>texto rodapé</p></div>
+        </div>
+    </div>
+</footer>
