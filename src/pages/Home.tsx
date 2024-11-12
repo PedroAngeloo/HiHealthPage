@@ -5,8 +5,6 @@ import Menu from "../assets/menu.svg";
 import Button from "../components/button";
 import "../styles/header.css";
 import "../styles/utility.css";
-import rectangleOne from "../assets/images/rectangleOne.png";
-import rectangleTwo from "../assets/images/rectangleTwo.png";
 import { FaBriefcase, FaCalendar, FaCheck, FaClock, FaEnvelope, FaHeart, FaLeaf, FaMapMarkerAlt, FaMobileAlt, FaPhone, FaUsers } from "react-icons/fa";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "../styles/footer.css";
@@ -164,7 +162,7 @@ export default function Home() {
               <i className="fab fa-facebook-f"></i>
               <i className="fab fa-youtube"></i>
             </div>
-            
+
 
           </div>
           <div className="footer-item">
