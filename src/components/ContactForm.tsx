@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import { sendEmail } from "../services/emailService";
-
+import "../styles/ContactForm.css";
 
 export const ContactForm = () => {
     const [email, setEmail] = useState("");

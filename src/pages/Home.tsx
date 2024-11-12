@@ -8,7 +8,6 @@ import "../styles/utility.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "../styles/footer.css";
 import { ContactForm } from "../components/ContactForm.tsx";
-import "../styles/ContactForm.css";
 import Pricing from "../components/Pricing.tsx";
 import Testimonials from "../components/Testimonials.tsx";
 import Solution from "../components/Solution.tsx";
