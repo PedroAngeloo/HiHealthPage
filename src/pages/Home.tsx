@@ -164,6 +164,7 @@ export default function Home() {
               <i className="fab fa-facebook-f"></i>
               <i className="fab fa-youtube"></i>
             </div>
+            
 
           </div>
           <div className="footer-item">
