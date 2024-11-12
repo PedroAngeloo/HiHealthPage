@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { sendEmail } from "../services/emailService";
-import { FaEnvelope, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhone, FaTwitter } from "react-icons/fa";
+
 
 export const ContactForm = () => {
     const [email, setEmail] = useState("");
