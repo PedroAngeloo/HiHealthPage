@@ -16,12 +16,16 @@ export const ContactForm = () => {
         const emailContent = `
 Novo contato recebido:
 
-Email: ${email}
-Mensagem: ${description}
+E-mail do remetente: ${email}
+Mensagem: 
+${description}
+
+Agradecemos pelo seu contato! Nossa equipe da HiHealth irá analisar sua mensagem e entrar em contato em breve.
 
 Atenciosamente,
-A equipe HiHealth
-        `;
+Equipe HiHealth
+`;
+
 
         try {
             await sendEmail({
