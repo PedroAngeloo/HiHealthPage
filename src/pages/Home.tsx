@@ -22,14 +22,13 @@ export default function Home() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight * 0.8;
 
-      solutionBoxes.forEach((box: any) => {
-        if (box.offsetTop < scrollPosition && box.offsetTop + box.clientHeight > window.scrollY) {
+      solutionBoxes.forEach((box: Element) => {
+        if (box.getBoundingClientRect().top < scrollPosition && box.getBoundingClientRect().bottom > window.scrollY) {
           box.classList.add('visible');
         } else {
           box.classList.remove('visible');
         }
-      });
-    };
+      });    };
 
     window.addEventListener('scroll', handleScroll);
 
@@ -189,10 +188,13 @@ export default function Home() {
               <li>Clientes</li>
               <li>API</li>
             </ul>
-          </div><div className="footer-bottom">
+          </div>
+           
+     </footer>
+
+     <div className="footer-bottom">
             <p>Feito com amor na aula de Programação Web💙 ©2024 Pedroca - Libre a todos.</p>
-          </div>  
-     </footer>    
+          </div>     
         
     </>
   );
