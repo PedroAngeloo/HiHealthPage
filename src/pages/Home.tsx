@@ -189,11 +189,11 @@ export default function Home() {
               <li>Clientes</li>
               <li>API</li>
             </ul>
-          </div>
-     </footer>    
-        <div className="footer-bottom">
+          </div><div className="footer-bottom">
             <p>Feito com amor na aula de Programação Web💙 ©2024 Pedroca - Libre a todos.</p>
           </div>  
+     </footer>    
+        
     </>
   );
 }
